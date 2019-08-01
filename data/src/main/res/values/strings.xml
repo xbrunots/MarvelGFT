@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Data</string>
+    <string name="cache_error">Não é possível obter instância para</string>
+    <string name="tag_cache_error">cache_error</string>
+</resources>

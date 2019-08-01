@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" android:background="@android:color/transparent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:background="@drawable/shape_bottomsheet">
+
+        <ImageView
+                android:layout_width="0dp"
+                android:layout_height="360dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                android:id="@+id/ivPicture"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+        <ImageView
+                android:layout_width="0dp"
+                android:layout_height="360dp" app:srcCompat="@drawable/shadow_top"
+                android:id="@+id/ivPicture2"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" android:background="@android:color/transparent"/>
+        <ImageButton
+                android:layout_width="56sp"
+                android:layout_height="56sp" app:srcCompat="@drawable/ic_close_black_24dp"
+                android:id="@+id/ibClose" android:background="@android:color/transparent"
+                android:scaleType="centerInside" android:padding="8sp" app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" android:tint="#fff"/>
+        <ImageButton
+                android:layout_width="56sp"
+                android:layout_height="56sp" app:srcCompat="@drawable/ic_favorite_border_black_24dp"
+                android:id="@+id/ibLike" android:background="@android:color/transparent"
+                android:scaleType="centerInside" android:padding="8sp" app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent" android:tint="#fff"/>
+        <ImageButton
+                android:layout_width="56sp"
+                android:layout_height="56sp" app:srcCompat="@drawable/ic_share_black_24dp"
+                android:id="@+id/ibShare" android:background="@android:color/transparent"
+                android:scaleType="centerInside" android:padding="8sp" app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/ibLike" android:tint="#fff"/>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/ivPicture"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" android:padding="16sp"
+        >
+            <TextView
+                    android:text="TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvTitle" android:textSize="32sp"
+                    android:textColor="@color/colorAccent" android:fontFamily="sans-serif-thin"/>
+            <TextView
+                    android:text="TextView"
+                    android:paddingLeft="4sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvDescription" android:textSize="16sp"
+                    android:fontFamily="sans-serif-thin" android:textColor="@color/colorAccent"/>
+            <TextView
+                    android:text="Quer saber mais ?"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/tvTitle3" android:textSize="16sp"
+                    android:layout_marginTop="16sp" android:textColor="@color/colorAccent"/>
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:layout_marginTop="16sp"
+                    android:layout_marginBottom="16sp" android:gravity="left">
+                <Button
+                        android:text="Detalhes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/btnDetail"
+                        android:background="@drawable/shape_button_default"
+                        android:textColor="#ffffff"
+                        android:paddingLeft="16sp"
+                        android:paddingRight="16sp"
+                        android:layout_marginRight="8sp"/>
+                <Button
+                        android:text="Wiki"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/btnWiki"
+                        android:background="@drawable/shape_button_default"
+                        android:textColor="#ffffff"
+                        android:paddingLeft="16sp" android:paddingRight="16sp" android:layout_marginRight="8sp"/>
+                <Button
+                        android:text="Comic Link"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/btnComicLink"
+                        android:background="@drawable/shape_button_default"
+                        android:textColor="#ffffff"
+                        android:paddingLeft="16sp" android:paddingRight="16sp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

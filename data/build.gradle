@@ -1,0 +1,77 @@
+import java.security.MessageDigest
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+def MARVEL_PUBLIC_KEY = "6214183b28b4ea37a0777a64378d6bde"
+def MARVEL_PRIVATE_KEY = "dc45bce0378d984db8b6f100d6fa153d584f3daa"
+def MARVEL_TS = generateTS()
+def MARVEL_HASH = "$MARVEL_TS$MARVEL_PRIVATE_KEY$MARVEL_PUBLIC_KEY".md5()
+
+def generateTS() {
+    String alphabet = (('A'..'N') + ('P'..'Z') + ('a'..'k') + ('m'..'z') + ('2'..'9')).join()
+    def length = 6
+    return new Random().with {
+        (1..length).collect { alphabet[nextInt(alphabet.length())] }.join()
+    }
+}
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "29.0.0"
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            buildConfigField 'String', 'BASE_URL', '"https://gateway.marvel.com"'
+            buildConfigField 'String', 'MARVEL_API_KEY', MARVEL_PUBLIC_KEY
+            buildConfigField 'String', 'MARVEL_HASH', MARVEL_HASH
+            buildConfigField 'String', 'MARVEL_TS', MARVEL_TS
+        }
+        debug {
+            buildConfigField 'String', 'BASE_URL', '"https://gateway.marvel.com"'
+            buildConfigField 'String', 'MARVEL_API_KEY', '"' + MARVEL_PUBLIC_KEY.toString() + '"'
+            buildConfigField 'String', 'MARVEL_HASH', '"' + MARVEL_HASH.toString() + '"'
+            buildConfigField 'String', 'MARVEL_TS', '"' + MARVEL_TS.toString() + '"'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.core:core-ktx:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //kotlin
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //gson
+    implementation "com.google.code.gson:gson:$gson_version"
+
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit2_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit2_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit2_version"
+    implementation "com.squareup.retrofit2:adapter-guava:$retrofit2_version"
+    implementation "com.squareup.retrofit2:adapter-java8:$retrofit2_version"
+
+    //okhttp
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+    implementation "com.squareup.okhttp3:mockwebserver:$okhttp_version"
+}

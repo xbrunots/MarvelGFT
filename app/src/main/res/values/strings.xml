@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Marvel App</string>
+
+    <string name="long_shortcut">long test</string>
+    <string name="disable_shortcut">disable</string>
+
+    <string name="short_capitain">Captain America</string>
+    <string name="short_spiderman">Spider Man</string>
+    <string name="short_ironman">Iron Man</string>
+    <string name="short_dead_pool">Dead Pool</string>
+    <string name="short_thor">Thor</string>
+    <string name="details">details</string>
+    <string name="not_browser">Nenhum aplicativo pode manipular essa solicitação. Por favor, instale um navegador da web
+        ou verifique seu URL
+    </string>
+    <string name="whatsapp_conversation">
+        <![CDATA[https://api.whatsapp.com/send?phone=15997572550&text=Oi,%20gostou%20do%20app?]]></string>
+</resources>

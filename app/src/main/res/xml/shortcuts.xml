@@ -1,0 +1,72 @@
+<shortcuts xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+            android:shortcutId="capitanAmerica"
+            android:enabled="true"
+            android:icon="@drawable/ic_head"
+            android:shortcutShortLabel="@string/short_capitain"
+            android:shortcutLongLabel="@string/short_capitain"
+            android:shortcutDisabledMessage="@string/disable_shortcut" tools:ignore="UnusedAttribute">
+        <intent
+                android:action="br.com.gft.marvel.QUICKSTART"
+                android:targetPackage="br.com.gft.marvel"
+                android:targetClass="br.com.gft.marvel.feature.home.presentation.HomeActivity"/>
+
+        <categories android:name="android.shortcut.conversation"/>
+    </shortcut>
+    <shortcut
+            android:shortcutId="spiderMan"
+            android:enabled="true"
+            android:icon="@drawable/ic_spiderman"
+            android:shortcutShortLabel="@string/short_spiderman"
+            android:shortcutLongLabel="@string/short_spiderman"
+            android:shortcutDisabledMessage="@string/disable_shortcut" tools:ignore="UnusedAttribute">
+        <intent
+                android:action="br.com.gft.marvel.QUICKSTART"
+                android:targetPackage="br.com.gft.marvel"
+                android:targetClass="br.com.gft.marvel.feature.home.presentation.HomeActivity"/>
+
+        <categories android:name="android.shortcut.conversation"/>
+    </shortcut>
+    <shortcut
+            android:shortcutId="ironMan"
+            android:enabled="true"
+            android:icon="@drawable/ic_ironman"
+            android:shortcutShortLabel="@string/short_ironman"
+            android:shortcutLongLabel="@string/short_ironman"
+            android:shortcutDisabledMessage="@string/disable_shortcut" tools:ignore="UnusedAttribute">
+        <intent
+                android:action="br.com.gft.marvel.QUICKSTART"
+                android:targetPackage="br.com.gft.marvel"
+                android:targetClass="br.com.gft.marvel.feature.home.presentation.HomeActivity"/>
+
+        <categories android:name="android.shortcut.conversation"/>
+    </shortcut>
+    <shortcut
+            android:shortcutId="deadPool"
+            android:enabled="true"
+            android:icon="@drawable/ic_dead_pool"
+            android:shortcutShortLabel="@string/short_dead_pool"
+            android:shortcutLongLabel="@string/short_dead_pool"
+            android:shortcutDisabledMessage="@string/disable_shortcut" tools:ignore="UnusedAttribute">
+        <intent
+                android:action="br.com.gft.marvel.QUICKSTART"
+                android:targetPackage="br.com.gft.marvel"
+                android:targetClass="br.com.gft.marvel.feature.home.presentation.HomeActivity"/>
+
+        <categories android:name="android.shortcut.conversation"/>
+    </shortcut>
+    <shortcut
+            android:shortcutId="thor"
+            android:enabled="true"
+            android:icon="@drawable/ic_thor"
+            android:shortcutShortLabel="@string/short_thor"
+            android:shortcutLongLabel="@string/short_thor"
+            android:shortcutDisabledMessage="@string/disable_shortcut" tools:ignore="UnusedAttribute">
+        <intent
+                android:action="br.com.gft.marvel.QUICKSTART"
+                android:targetPackage="br.com.gft.marvel"
+                android:targetClass="br.com.gft.marvel.feature.home.presentation.HomeActivity"/>
+
+        <categories android:name="android.shortcut.conversation"/>
+    </shortcut>
+</shortcuts>
